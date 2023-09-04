@@ -6,7 +6,7 @@ function Marcadores(props) {
   const guardar = (name) => {
     setNombre(name);
   };
-
+ const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;</>;
   return (
     <div>
       {props.children}
@@ -17,7 +17,10 @@ function Marcadores(props) {
       ></input>
       <button onClick={() => guardar(nombre)}>Guardar</button>
 
-      <p>Input de resultados de {nombre}</p>
+      <p><strong>{nombre}</strong>  {tab} <span><strong>PC</strong></span> </p>
+        <p>Puntaje {nombre}  {tab}<span>Puntaje pc</span></p>
+
+      
     </div>
   );
 }

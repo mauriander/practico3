@@ -1,9 +1,10 @@
 
 import './App.css';
 import pptlogo from './assets/img/pngwing.com.png'
-import Jugar from './components/Jugar'
+//import Jugar from './components/Jugar'
 import Marcadores from './components/Marcadores';
-
+import TurnoJugador from './components/TurnoJugador';
+import TurnoPc from './components/TurnoPc'
 function App() {
   return (
     <div className="App">
@@ -20,7 +21,9 @@ function App() {
      <div className='card'>
      <div className='cards-header'></div>
      <Marcadores></Marcadores>
-        <Jugar/>
+     <TurnoJugador></TurnoJugador>
+     <TurnoPc></TurnoPc>
+        {/* <Jugar/> */}
 
      </div>
    
