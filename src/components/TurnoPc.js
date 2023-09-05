@@ -1,9 +1,10 @@
-import React from "react";
-import piedra from '../assets/img/piedra-removebg-preview.png'
-import papel from '../assets/img/papel-removebg-preview.png'
-import tijera from '../assets/img/tijera-removebg-preview.png'
-import turnopc from '../assets/img/pngwing.com.png'
+import React, { useState } from "react";
+import jugadaPC from '../components/TurnoJugador.js'
 function TurnoPC(props){
+
+
+
+
 return (
     <div>
 {props.children}
@@ -14,7 +15,7 @@ return (
  <div className="item">
       <button> <img 
         className='user_img'
-        src={piedra}
+        src={jugadaPC}
         alt='user'></img>
      </button>
 </div>

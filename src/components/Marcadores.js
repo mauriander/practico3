@@ -19,7 +19,7 @@ function Marcadores(props) {
 
       <p><strong>{nombre}</strong>  {tab} <span><strong>PC</strong></span> </p>
         <p>Puntaje {nombre}  {tab}<span>Puntaje pc</span></p>
-
+<div><span></span></div>
       
     </div>
   );

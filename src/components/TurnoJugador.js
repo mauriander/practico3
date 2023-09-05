@@ -6,20 +6,33 @@ function TurnoJugador(props) {
   const [jugadaUsuario, setjugadaUsuario] = useState(null);
  const [jugadaPC, setjugadaPC] = useState(null);
   const guardarJugada = (jugada) => {
-    setjugadaUsuario(jugada);
+    if(jugada=='piedra')
+    setjugadaUsuario(piedra);
+      if(jugada=='papel')
+    setjugadaUsuario(papel);
+      if(jugada=='tijera')
+    setjugadaUsuario(tijera);
    // jugadaUsuario=jugada;
    console.log(jugada);
    
   let i = Math.floor(Math.random() * (2 - 0 + 1) + 0);
   let ajugada = ["piedra", "papel", "tijera"];
   console.log("La computadora eligio: " + ajugada[i]);
-  setjugadaPC(ajugada[i]);
+  if(ajugada[i]=='piedra')
+    setjugadaPC(piedra);
+      if(ajugada[i]=='papel')
+    setjugadaPC(papel);
+      if(ajugada[i]=='tijera')
+    setjugadaPC(tijera);
+  
   };
 
   return (
     <div>
       {props.children}
-
+<div> 
+          <button> <img src={jugadaUsuario} alt="jugadUsuario" /></button> 
+          <span> <button><img src={jugadaPC} alt="jugadapc" /></button></span></div>
       <div className="items">
         <div className="item">
           <button onClick={() => guardarJugada("piedra")}>
