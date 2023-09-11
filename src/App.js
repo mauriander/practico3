@@ -5,7 +5,9 @@ import pptlogo from './assets/img/pngwing.com.png'
 import Marcadores from './components/Marcadores';
 import TurnoJugador from './components/TurnoJugador';
 
+
 function App() {
+
   return (
     <div className="App">
      <h1>Piedra Papel Tijera</h1>

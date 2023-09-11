@@ -27,7 +27,7 @@ function Marcadores(props) {
       <button onClick={() => guardar(nombre)}>Iniciar</button>
 <button onClick={() => reiniciar()}>Reiniciar</button>
       <p><strong>{nombre}</strong>  {tab} <span><strong>PC</strong></span> </p>
-        <p>Puntaje {nombre}  {tab}<span>Puntaje pc </span></p>
+        <p>Puntaje {nombre}  {tab}<span>Puntaje pc {props.puntajePC}</span></p>
 <div><span></span></div>
       
     </div>

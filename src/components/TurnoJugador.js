@@ -10,15 +10,6 @@ function TurnoJugador(props) {
  const [puntajeUsuario, setPuntajeUsuario] = useState(0);
   const [puntajePC, setPuntajePC] = useState(0);
 
-  const actualizarPuntajes = () => {
-    if (resultado === "Usted Gana") {
-      setPuntajeUsuario(puntajeUsuario + 1);
-    } else if (resultado === "Tu pierdes, vuelve a intentarlo") {
-      setPuntajePC(puntajePC + 1);
-    }
-  };
-
-
   const guardarJugada = (jugada) => {
     if(jugada=='piedra')
     setjugadaUsuario(piedra);
@@ -43,8 +34,6 @@ function TurnoJugador(props) {
 
   };
  
-
-
 function determinarGanador(turnoJugador, turnoCompu) {
    if (turnoCompu === turnoJugador) {
    setResultado("Empataron");
@@ -53,13 +42,13 @@ function determinarGanador(turnoJugador, turnoCompu) {
     (turnoJugador === "papel" && turnoCompu === "piedra") ||
     (turnoJugador === "tijera" && turnoCompu === "papel")
   ) {
+    setPuntajeUsuario(puntajeUsuario + 1);
     setResultado("Usted Gana");
   } else {
-      
+      setPuntajePC(puntajePC + 1);
     setResultado("Tu pierdes, vuelve a intentarlo");
   }
-  //adentro de determinar ganador
-    actualizarPuntajes();
+  
 };
 
 
