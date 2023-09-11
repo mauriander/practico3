@@ -10,6 +10,7 @@ function TurnoJugador(props) {
  const [puntajeUsuario, setPuntajeUsuario] = useState(0);
   const [puntajePC, setPuntajePC] = useState(0);
   
+  
 
   const guardarJugada = (jugada) => {
     if(jugada=='piedra')
@@ -48,6 +49,7 @@ function determinarGanador(turnoJugador, turnoCompu) {
       if (puntajeUsuario >= 2) {
     //setResultado("El ganador es Usted");
     alert('El ganador es Usted');
+    reiniciarPartida();
   }
   } else {
       setPuntajePC(puntajePC + 1);
@@ -56,18 +58,26 @@ function determinarGanador(turnoJugador, turnoCompu) {
     //setResultado("El ganador La Computadora");
     alert('La Computadora ha ganada esta vez');
     //confirm('Desea continuar');
+    reiniciarPartida();
   }
   }
  
 };
 
-
+  function reiniciarPartida() {
+    setPuntajeUsuario(0);
+    setPuntajePC(0);
+    setjugadaUsuario(null);
+    setjugadaPC(null);
+    setResultado("");
+   //Conservo el nombre
+  }
   return (
     <div>
       {props.children}
           <p>{puntajeUsuario} - {puntajePC}</p>
     <p>{resultado}</p>
-    
+
     <div>
         <button><img src={jugadaUsuario} alt="jugadUsuario" /></button>
         <span><button><img src={jugadaPC} alt="jugadapc" /></button></span>
