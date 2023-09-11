@@ -2,9 +2,23 @@ import React, { useState } from "react";
 import piedra from "../assets/img/piedra-removebg-preview.png";
 import papel from "../assets/img/papel-removebg-preview.png";
 import tijera from "../assets/img/tijera-removebg-preview.png";
+
 function TurnoJugador(props) {
   const [jugadaUsuario, setjugadaUsuario] = useState(null);
  const [jugadaPC, setjugadaPC] = useState(null);
+ const [resultado, setResultado] = useState('');
+ const [puntajeUsuario, setPuntajeUsuario] = useState(0);
+  const [puntajePC, setPuntajePC] = useState(0);
+
+  const actualizarPuntajes = () => {
+    if (resultado === "Usted Gana") {
+      setPuntajeUsuario(puntajeUsuario + 1);
+    } else if (resultado === "Tu pierdes, vuelve a intentarlo") {
+      setPuntajePC(puntajePC + 1);
+    }
+  };
+
+
   const guardarJugada = (jugada) => {
     if(jugada=='piedra')
     setjugadaUsuario(piedra);
@@ -24,13 +38,35 @@ function TurnoJugador(props) {
     setjugadaPC(papel);
       if(ajugada[i]=='tijera')
     setjugadaPC(tijera);
-  
+//adentro guardar jugada
+    determinarGanador(jugada,ajugada[i])
+
   };
+ 
+
+
+function determinarGanador(turnoJugador, turnoCompu) {
+   if (turnoCompu === turnoJugador) {
+   setResultado("Empataron");
+  } else if (
+    (turnoJugador === "piedra" && turnoCompu === "tijera") ||
+    (turnoJugador === "papel" && turnoCompu === "piedra") ||
+    (turnoJugador === "tijera" && turnoCompu === "papel")
+  ) {
+    setResultado("Usted Gana");
+  } else {
+      
+    setResultado("Tu pierdes, vuelve a intentarlo");
+  }
+  //adentro de determinar ganador
+    actualizarPuntajes();
+};
+
 
   return (
     <div>
       {props.children}
-<div> 
+<div>     <p>{puntajeUsuario} - {puntajePC}</p>
           <button> <img src={jugadaUsuario} alt="jugadUsuario" /></button> 
           <span> <button><img src={jugadaPC} alt="jugadapc" /></button></span></div>
       <div className="items">

@@ -1,23 +1,11 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 
-import TurnoJugador from './TurnoJugador';
-import TurnoPc from './TurnoPc'
 
 function Marcadores(props) {
 
   const [nombre, setNombre] = useState("Mauri");
-  const [puntajeUsuario, setPuntajeUsuario] = useState(0);
-  const [puntajePC, setPuntajePC] = useState(0);
-
- 
-   const actualizarPuntajes = (resultado) => {
-    if (resultado === "Usted Gana") {
-      setPuntajeUsuario(puntajeUsuario + 1);
-    } else if (resultado === "Tu pierdes, vuelve a intentarlo") {
-      setPuntajePC(puntajePC + 1);
-    }
-  };
-
+  
+  
  const validarNombre = (nombre) => {
     return nombre.trim().length > 0;
   };
@@ -39,7 +27,7 @@ function Marcadores(props) {
       <button onClick={() => guardar(nombre)}>Iniciar</button>
 <button onClick={() => reiniciar()}>Reiniciar</button>
       <p><strong>{nombre}</strong>  {tab} <span><strong>PC</strong></span> </p>
-        <p>Puntaje {nombre} {puntajeUsuario} {tab}<span>Puntaje pc{puntajePC} </span></p>
+        <p>Puntaje {nombre}  {tab}<span>Puntaje pc </span></p>
 <div><span></span></div>
       
     </div>
@@ -47,3 +35,4 @@ function Marcadores(props) {
 }
 
 export default Marcadores;
+
