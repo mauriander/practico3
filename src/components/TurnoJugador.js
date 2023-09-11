@@ -9,6 +9,7 @@ function TurnoJugador(props) {
  const [resultado, setResultado] = useState('');
  const [puntajeUsuario, setPuntajeUsuario] = useState(0);
   const [puntajePC, setPuntajePC] = useState(0);
+  
 
   const guardarJugada = (jugada) => {
     if(jugada=='piedra')
@@ -64,32 +65,30 @@ function determinarGanador(turnoJugador, turnoCompu) {
   return (
     <div>
       {props.children}
-<div>     <p>{puntajeUsuario} - {puntajePC}</p>
-<p>{resultado}</p>
+          <p>{puntajeUsuario} - {puntajePC}</p>
+    <p>{resultado}</p>
     
-          <button> <img src={jugadaUsuario} alt="jugadUsuario" /></button> 
-          <span> <button><img src={jugadaPC} alt="jugadapc" /></button></span></div>
+    <div>
+        <button><img src={jugadaUsuario} alt="jugadUsuario" /></button>
+        <span><button><img src={jugadaPC} alt="jugadapc" /></button></span>
+    </div>
       <div className="items">
-        <div className="item">
-          <button onClick={() => guardarJugada("piedra")}>
+    <div className="item">
+        <button onClick={() => guardarJugada("piedra")}>
             <img className="piedra_img" src={piedra} alt="piedra" />
-          </button>
-        </div>
-        <div className="item">
-          {" "}
-          <button onClick={() => guardarJugada("papel")}>
-            {" "}
+        </button>
+    </div>
+    <div className="item">
+        <button onClick={() => guardarJugada("papel")}>
             <img className="papel_img" src={papel} alt="papel"></img>
-          </button>
-        </div>
-        <div className="item">
-          {" "}
-          <button onClick={() => guardarJugada("tijera")}>
-            {" "}
+        </button>
+    </div>
+    <div className="item">
+        <button onClick={() => guardarJugada("tijera")}>
             <img className="tijera_img" src={tijera} alt="tijera"></img>
-          </button>
-        </div>
-      </div>
+        </button>
+    </div>
+</div>
     </div>
   );
 }
