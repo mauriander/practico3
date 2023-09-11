@@ -4,11 +4,14 @@ import React, {useState } from "react";
 
 function Marcadores(props) {
   const [nombre, setNombre] = useState("");
-  const [iniciom, setIniciom] = useState(false);  
+  const [iniciom, setIniciom] = useState(false); 
+  const [inputDisabled, setInputDisabled] = useState(false); 
+  
  const validarNombre = (nombre) => {
     if (nombre.length > 0 && /^[a-zA-Z0-9]+$/.test(nombre)) {
       setNombre(nombre);
       setIniciom(true);
+      setInputDisabled(true);
       props.setInicio(true);
     } else {
       setIniciom(false);
@@ -20,6 +23,7 @@ function Marcadores(props) {
   setNombre("");
     setIniciom(false);
     props.setInicio(false);
+    setInputDisabled(false);
   //  window.location.reload();
 }
  
@@ -32,6 +36,7 @@ function Marcadores(props) {
         type="text"
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
+        disabled={inputDisabled} 
       ></input>
       <button onClick={() => validarNombre(nombre)}>Iniciar</button>
       <button onClick={() => reiniciar()}>Reiniciar</button>
