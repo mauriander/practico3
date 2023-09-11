@@ -36,7 +36,7 @@ function TurnoJugador(props) {
  
 function determinarGanador(turnoJugador, turnoCompu) {
    if (turnoCompu === turnoJugador) {
-   setResultado("Empataron");
+  setResultado("Empataron");
   } else if (
     (turnoJugador === "piedra" && turnoCompu === "tijera") ||
     (turnoJugador === "papel" && turnoCompu === "piedra") ||
@@ -44,11 +44,20 @@ function determinarGanador(turnoJugador, turnoCompu) {
   ) {
     setPuntajeUsuario(puntajeUsuario + 1);
     setResultado("Usted Gana");
+      if (puntajeUsuario >= 2) {
+    //setResultado("El ganador es Usted");
+    alert('El ganador es Usted');
+  }
   } else {
       setPuntajePC(puntajePC + 1);
     setResultado("Tu pierdes, vuelve a intentarlo");
+       if (puntajePC >= 2) {
+    //setResultado("El ganador La Computadora");
+    alert('La Computadora ha ganada esta vez');
+    //confirm('Desea continuar');
   }
-  
+  }
+ 
 };
 
 
@@ -56,6 +65,8 @@ function determinarGanador(turnoJugador, turnoCompu) {
     <div>
       {props.children}
 <div>     <p>{puntajeUsuario} - {puntajePC}</p>
+<p>{resultado}</p>
+    
           <button> <img src={jugadaUsuario} alt="jugadUsuario" /></button> 
           <span> <button><img src={jugadaPC} alt="jugadapc" /></button></span></div>
       <div className="items">
