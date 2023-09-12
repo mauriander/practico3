@@ -1,6 +1,26 @@
 import { computeHeadingLevel } from "@testing-library/react";
 import React, {useState } from "react";
+import styled from "styled-components";
+const Botones = styled.button`
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  
+   &:hover {
+   opacity:0.7;
+  }
+`
+const Divisor = styled.div`
 
+   
+ 
+`
 
 function Marcadores(props) {
   const [nombre, setNombre] = useState("");
@@ -30,7 +50,7 @@ function Marcadores(props) {
 
  const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;</>;
   return (
-   <div>
+   <Divisor>
       {props.children}
       <input
         type="text"
@@ -38,12 +58,12 @@ function Marcadores(props) {
         onChange={(e) => setNombre(e.target.value)}
         disabled={inputDisabled} 
       ></input>
-      <button onClick={() => validarNombre(nombre)}>Iniciar</button>
-      <button onClick={() => reiniciar()}>Reiniciar</button>
+      <Botones onClick={() => validarNombre(nombre)}>Iniciar</Botones>
+      <Botones onClick={() => reiniciar()}>Reiniciar</Botones>
       <p>
-        <strong>{nombre}</strong> {tab} <span><strong>PC</strong></span>
+        <strong>{nombre.toUpperCase()}</strong> {tab} <span><strong>PC</strong></span>
       </p>
-    </div>
+    </Divisor>
   );
 }
 export default Marcadores;

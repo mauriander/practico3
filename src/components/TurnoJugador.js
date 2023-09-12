@@ -2,7 +2,18 @@ import React, { useState } from "react";
 import piedra from "../assets/img/piedra-removebg-preview.png";
 import papel from "../assets/img/papel-removebg-preview.png";
 import tijera from "../assets/img/tijera-removebg-preview.png";
+import styled from "styled-components";
 
+const Header = styled.h1``
+const DivCard = styled.div`
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  border-radius: 6px;
+    display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-height: 430px;
+  width: 100%;
+`
 function TurnoJugador(props) {
   const [jugadaUsuario, setjugadaUsuario] = useState(null);
  const [jugadaPC, setjugadaPC] = useState(null);
@@ -73,10 +84,10 @@ function determinarGanador(turnoJugador, turnoCompu) {
    //Conservo el nombre
   }
   return (
-    <div>
+    <DivCard>
       {props.children}
-          <p>{puntajeUsuario} - {puntajePC}</p>
-    <p>{resultado}</p>
+          <Header>{puntajeUsuario} - {puntajePC}</Header>
+    <Header>{resultado}</Header>
 
     <div>
         <button><img src={jugadaUsuario} alt="jugadUsuario" /></button>
@@ -99,7 +110,7 @@ function determinarGanador(turnoJugador, turnoCompu) {
         </button>
     </div>
 </div>
-    </div>
+    </DivCard>
   );
 }
 

@@ -4,6 +4,7 @@ import pptlogo from "./assets/img/pngwing.com.png";
 import Marcadores from "./components/Marcadores";
 import TurnoJugador from "./components/TurnoJugador";
 
+
 function App() {
     const [inicio, setInicio] = useState(false);
   return (
