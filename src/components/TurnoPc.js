@@ -2,21 +2,28 @@ import React, { useState } from "react";
 import jugadaPC from '../components/TurnoJugador.js'
 const TurnoPC = ({jugada})=>{
 
+     const [reglasr, setReglasr] = useState(false);
 
+  const verReglas = () => {
+    console.log(reglasr);
+   if (reglasr === true) {
+  setReglasr(false);
 
+} else {
+  setReglasr(true);
+}
+    
+    };
+  
 
 return (
     <div>
-
-<p>Input de resultados</p>
+<button onClick={() => verReglas()}>OCULTAR REGLAS DE JUEGO</button> 
+<p>Estas son la reglas</p>
  <div>
-  <p>MUESTRO JUGADA COMPONENTE PC</p>
+  <p>Estas son la reglas</p>
  <div className="item">
-      <button> <img 
-        className='user_img'
-        src={jugada}
-        alt='user'></img>
-     </button>
+     <p>Estas son la reglas</p>
 </div>
      </div>
     </div>

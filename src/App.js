@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import pptlogo from "./assets/img/pngwing.com.png";
 import Marcadores from "./components/Marcadores";
 import TurnoJugador from "./components/TurnoJugador";
+import TurnoPC from "./components/TurnoPc";
 
 
 function App() {
     const [inicio, setInicio] = useState(false);
+     const [reglas, setReglas] = useState(false);
+
+    
   return (
     <div className="App">
       <h1>Piedra Papel Tijera</h1>
@@ -16,10 +20,10 @@ function App() {
       </div>
       <div className="card">
         <div className="cards-header"></div>
-        <Marcadores inicio={inicio} setInicio={setInicio}/>
-        { inicio ?  <TurnoJugador></TurnoJugador>  : "Comenzaremos en cuanto ingreses tu nombre de Usuario"    }
-        
-      </div>
+        <Marcadores inicio={inicio} setInicio={setInicio}  />
+        { inicio ?  <TurnoJugador></TurnoJugador>  : <h2>Comenzaremos en cuanto ingreses tu nombre de Usuario</h2>    }
+         
+                          </div>
     </div>
   );
 }

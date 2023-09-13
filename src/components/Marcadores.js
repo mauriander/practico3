@@ -2,21 +2,33 @@ import { computeHeadingLevel } from "@testing-library/react";
 import React, {useState } from "react";
 import styled from "styled-components";
 const Botones = styled.button`
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 20px;
-  text-align: center;
-  
-   &:hover {
-   opacity:0.7;
-  }
+ 
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 20px;
+      text-align: center;
+      margin: 16px 16px;
+    
+      &:hover {
+        opacity: 0.7;
+      }
+           
+
+&:disabled {
+  background-color: #ccc; 
+  color: #666; 
+  cursor: not-allowed; 
+}
 `
 const Divisor = styled.div`
+display:center;
+align-items: center; 
+
 
    
  
@@ -26,7 +38,7 @@ function Marcadores(props) {
   const [nombre, setNombre] = useState("");
   const [iniciom, setIniciom] = useState(false); 
   const [inputDisabled, setInputDisabled] = useState(false); 
-  
+  const [reglasr, setReglasr] = useState(false); 
  const validarNombre = (nombre) => {
     if (nombre.length > 0 && /^[a-zA-Z0-9]+$/.test(nombre)) {
       setNombre(nombre);
@@ -39,6 +51,18 @@ function Marcadores(props) {
       alert("Por favor, ingrese un nombre válido.");
     }
   };
+
+
+  const verReglasr=()=>{
+if(reglasr===true){
+  setReglasr(false);
+}
+else{
+setReglasr(true);
+}
+
+
+  }
  const reiniciar = () => {  
   setNombre("");
     setIniciom(false);
@@ -50,20 +74,30 @@ function Marcadores(props) {
 
  const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;</>;
   return (
-   <Divisor>
+   <div>
       {props.children}
+          <Divisor>
       <input
+       style={{fontSize: 32 + 'px'}}
         type="text"
+        placeholder="Ingrese nombre de usuario"
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
         disabled={inputDisabled} 
       ></input>
-      <Botones onClick={() => validarNombre(nombre)}>Iniciar</Botones>
-      <Botones onClick={() => reiniciar()}>Reiniciar</Botones>
-      <p>
+      
+      <Botones disabled={inputDisabled} onClick={() => validarNombre(nombre)}>Iniciar</Botones>
+   
+        </Divisor>
+          <Divisor>
+      <Botones disabled={!inputDisabled}  onClick={() => reiniciar()}>Reiniciar</Botones>
+        <Botones onClick={() => verReglasr()}>Reglas de Juegos</Botones>
+
+          </Divisor>
+          <div>
         <strong>{nombre.toUpperCase()}</strong> {tab} <span><strong>PC</strong></span>
-      </p>
-    </Divisor>
+      </div>
+    </div>
   );
 }
 export default Marcadores;
