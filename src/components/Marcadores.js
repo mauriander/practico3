@@ -38,7 +38,7 @@ function Marcadores(props) {
   const [nombre, setNombre] = useState("");
   const [iniciom, setIniciom] = useState(false); 
   const [inputDisabled, setInputDisabled] = useState(false); 
-  const [reglasr, setReglasr] = useState(false); 
+ const [reglas, setReglas] = useState(false);
  const validarNombre = (nombre) => {
     if (nombre.length > 0 && /^[a-zA-Z0-9]+$/.test(nombre)) {
       setNombre(nombre);
@@ -52,17 +52,14 @@ function Marcadores(props) {
     }
   };
 
-
-  const verReglasr=()=>{
-if(reglasr===true){
-  setReglasr(false);
-}
-else{
-setReglasr(true);
-}
+ 
+  
+  const verReglas = () => {    
+     setReglas(!reglas);
+  props.setReglas(!reglas);    
+    };
 
 
-  }
  const reiniciar = () => {  
   setNombre("");
     setIniciom(false);
@@ -76,25 +73,23 @@ setReglasr(true);
   return (
    <div>
       {props.children}
-          <Divisor>
-      <input
-       style={{fontSize: 32 + 'px'}}
+      <Divisor>
+        <input
+        style={{fontSize: 32 + 'px'}}
         type="text"
         placeholder="Ingrese nombre de usuario"
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
         disabled={inputDisabled} 
-      ></input>
-      
-      <Botones disabled={inputDisabled} onClick={() => validarNombre(nombre)}>Iniciar</Botones>
-   
-        </Divisor>
-          <Divisor>
-      <Botones disabled={!inputDisabled}  onClick={() => reiniciar()}>Reiniciar</Botones>
-        <Botones onClick={() => verReglasr()}>Reglas de Juegos</Botones>
+        ></input>
+        <Botones disabled={inputDisabled}   onClick={() => validarNombre(nombre)}>Iniciar</Botones>
+      </Divisor>
+      <Divisor>
+        <Botones disabled={!inputDisabled}  onClick={() => reiniciar()}>Reiniciar</Botones>
 
-          </Divisor>
-          <div>
+         {reglas?   <Botones  onClick={() => verReglas()}>Ocultar Reglas de Juego</Botones>:  <Botones  onClick={() => verReglas()}>Ver Reglas de Juego</Botones>} 
+      </Divisor>
+      <div>
         <strong>{nombre.toUpperCase()}</strong> {tab} <span><strong>PC</strong></span>
       </div>
     </div>

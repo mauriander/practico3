@@ -9,7 +9,10 @@ import TurnoPC from "./components/TurnoPc";
 function App() {
     const [inicio, setInicio] = useState(false);
      const [reglas, setReglas] = useState(false);
-
+  
+  // const verReglas = () => {    
+  // setReglas(!reglas);    
+  //   };
     
   return (
     <div className="App">
@@ -20,8 +23,10 @@ function App() {
       </div>
       <div className="card">
         <div className="cards-header"></div>
-        <Marcadores inicio={inicio} setInicio={setInicio}  />
+        <Marcadores inicio={inicio} setInicio={setInicio}  reglas={reglas} setReglas={setReglas}/>
+         {reglas ? <TurnoPC />: ''}
         { inicio ?  <TurnoJugador></TurnoJugador>  : <h2>Comenzaremos en cuanto ingreses tu nombre de Usuario</h2>    }
+        
          
                           </div>
     </div>
