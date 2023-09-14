@@ -23,9 +23,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 /* logo */
 
@@ -39,8 +36,10 @@
 }
 
 .main_img {
-  height: 20vh;
-  padding: 32px;
+  height: 21vh;
+  margin: 16px;
+  padding: 16px;
+ 
 }
 
 @media (prefers-reduced-motion: no-preference) {
