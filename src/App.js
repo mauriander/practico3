@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import pptlogo from "./assets/img/pngwing.com.png";
 import Marcadores from "./components/Marcadores";
 import TurnoJugador from "./components/TurnoJugador";
-import TurnoPC from "./components/TurnoPc";
+import Reglas from "./components/Reglas";
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <img className="main_img" src={pptlogo} alt="logo_ppt"></img>
       </div>
       <div className="card">
-         {reglas ? <TurnoPC />: ''}
+         {reglas ? <Reglas />: ''}
         <Marcadores inicio={inicio} setInicio={setInicio}  reglas={reglas} setReglas={setReglas}/>
         
         { inicio ?  <TurnoJugador></TurnoJugador>  : <h2>Comenzaremos en cuanto ingreses tu nombre de Usuario</h2>    }

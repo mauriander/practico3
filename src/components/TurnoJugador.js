@@ -37,12 +37,14 @@ color:white;
 `
 const DivCard = styled.div`
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  border-radius: 6px;
-    display: flex;
+  border-radius: 32px;
+  display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding: 32px;
+  margin:32px;
   max-height: 430px;
-  width: 100%;
+ 
 `
 function TurnoJugador(props) {
   const [jugadaUsuario, setjugadaUsuario] = useState(defaultimg);
@@ -104,7 +106,7 @@ setMensajeModal('Felicitaciones ganaste la partida');
   }
   } else {
       setPuntajePC(puntajePC + 1);
-    setResultado("Tu pierdes, vuelve a intentarlo");
+    setResultado("Usted pierde");
        if (puntajePC >= 2) {
     //setResultado("El ganador La Computadora");
   setMensajeModal('Perdiste la partida, Intentalo nuevamente');
@@ -118,8 +120,8 @@ setMensajeModal('Felicitaciones ganaste la partida');
   function reiniciarPartida() {
     setPuntajeUsuario(0);
     setPuntajePC(0);
-    setjugadaUsuario(null);
-    setjugadaPC(null);
+    setjugadaUsuario(defaultimg);
+    setjugadaPC(defaultimg);
     setResultado("");
    //Conservo el nombre
   } const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;</>;

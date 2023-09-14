@@ -22,7 +22,7 @@ const TituloReglas = styled.h2`
        margin: 16px 16px;
 `
 
-const TurnoPC = ()=>{
+const Reglas = ()=>{
 
  
   
@@ -48,4 +48,4 @@ return (
 
 };
 
-export default TurnoPC;
+export default Reglas;
