@@ -25,7 +25,15 @@ const DivModal = styled.div`
 
  
 `
-const Header = styled.h1``
+const Header = styled.h1`
+color:white;
+
+`
+
+const Resultados = styled.h1`
+font-size:32px;
+color:white;
+`
 const DivCard = styled.div`
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   border-radius: 6px;
@@ -119,7 +127,7 @@ setMensajeModal('Felicitaciones ganaste la partida');
     <DivCard>
       {props.children}
           <Header>{puntajeUsuario} - {puntajePC}</Header>
-    <Header>{resultado}</Header>
+    <Resultados>{resultado}</Resultados>
   {modalIsOpen ?<Modal
   isOpen={modalIsOpen}
   onRequestClose={closeModal}
@@ -146,12 +154,12 @@ setMensajeModal('Felicitaciones ganaste la partida');
     },
   }}
 >
+
+  <Botones onClick={closeModal}>X</Botones>
   <h1>{mensajeModal}</h1>
  
  
-  <Botones onClick={closeModal}>REINICIAR</Botones>
-  <p></p>
-  <Botones onClick={window.close()}>SALIR Y CERRAR VENTANA</Botones>
+ 
 
 </Modal>: ''}
     <div>

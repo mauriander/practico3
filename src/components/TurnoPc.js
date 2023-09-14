@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import styled from "styled-components";
 const DivReglas = styled.div`
      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -34,8 +34,8 @@ return (
      <ul>
 <LiReglas>Cada jugador elige una de las tres opciones: piedra, papel o tijera.</LiReglas>
 <LiReglas>La piedra aplasta la tijera, la tijera corta el papel y el papel envuelve la piedra.</LiReglas>
-<LiReglas>El jugador que eLiReglasge el objeto que vence al del otro gana la ronda.</LiReglas>
-<LiReglas>Si los dos jugadores eLiReglasgen el mismo objeto, hay empate y se repite la ronda.</LiReglas>
+<LiReglas>El jugador que elige el objeto que vence al del otro gana la ronda.</LiReglas>
+<LiReglas>Si los dos jugadores eligen el mismo objeto, hay empate y se repite la ronda.</LiReglas>
 <LiReglas>Se jugaran al mejor de 5 rondas.Es decie el primero en alcanzar 3 puntos resultara ganador</LiReglas>
 </ul>
 </div>

@@ -22,9 +22,9 @@ function App() {
         <img className="main_img" src={pptlogo} alt="logo_ppt"></img>
       </div>
       <div className="card">
-        <div className="cards-header"></div>
-        <Marcadores inicio={inicio} setInicio={setInicio}  reglas={reglas} setReglas={setReglas}/>
          {reglas ? <TurnoPC />: ''}
+        <Marcadores inicio={inicio} setInicio={setInicio}  reglas={reglas} setReglas={setReglas}/>
+        
         { inicio ?  <TurnoJugador></TurnoJugador>  : <h2>Comenzaremos en cuanto ingreses tu nombre de Usuario</h2>    }
         
          
