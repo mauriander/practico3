@@ -4,7 +4,10 @@ const DivReglas = styled.div`
      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border: none;   
       text-align: center;
-      margin: 16px 16px;
+      padding:32px;
+      margin: 32px;
+     border-radius:8px;
+    
 `
 const LiReglas = styled.li`
         border: none;
@@ -28,8 +31,8 @@ return (
     <DivReglas>
  
 <TituloReglas>Reglas PIEDRA - PAPEL - TIJERA</TituloReglas>
- 
- <hr></hr>
+<hr></hr>
+
  <div className="item">
      <ul>
 <LiReglas>Cada jugador elige una de las tres opciones: piedra, papel o tijera.</LiReglas>

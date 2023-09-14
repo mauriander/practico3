@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import piedra from "../assets/img/piedra-removebg-preview.png";
 import papel from "../assets/img/papel-removebg-preview.png";
 import tijera from "../assets/img/tijera-removebg-preview.png";
+import defaultimg from "../assets/img/pngwin100.png";
 import styled from "styled-components";
 // https://www.npmjs.com/package/react-modal
 import Modal from 'react-modal';
@@ -44,8 +45,8 @@ const DivCard = styled.div`
   width: 100%;
 `
 function TurnoJugador(props) {
-  const [jugadaUsuario, setjugadaUsuario] = useState(null);
- const [jugadaPC, setjugadaPC] = useState(null);
+  const [jugadaUsuario, setjugadaUsuario] = useState(defaultimg);
+ const [jugadaPC, setjugadaPC] = useState(defaultimg);
  const [resultado, setResultado] = useState('');
  const [puntajeUsuario, setPuntajeUsuario] = useState(0);
   const [puntajePC, setPuntajePC] = useState(0);
@@ -121,7 +122,7 @@ setMensajeModal('Felicitaciones ganaste la partida');
     setjugadaPC(null);
     setResultado("");
    //Conservo el nombre
-  }
+  } const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;</>;
   return (
   
     <DivCard>
@@ -163,7 +164,7 @@ setMensajeModal('Felicitaciones ganaste la partida');
 
 </Modal>: ''}
     <div>
-        <button><img src={jugadaUsuario} alt="jugadUsuario" /></button>
+        <button><img src={jugadaUsuario} alt="jugadUsuario" /></button>{tab}
         <span><button><img src={jugadaPC} alt="jugadapc" /></button></span>
     </div>
       <div className="items">

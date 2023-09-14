@@ -145,7 +145,8 @@ setModalIsOpen(true);
          {reglas?   <Botones  onClick={() => verReglas()}>Ocultar Reglas de Juego</Botones>:  <Botones  onClick={() => verReglas()}>Ver Reglas de Juego</Botones>} 
       </Divisor>
       <div>
-        <Nombres><strong>{nombre.toUpperCase()}</strong> {tab} <span><strong>PC</strong></span></Nombres>
+      <p>Bienvenido!!!</p>
+        <Nombres><strong>{nombre.toUpperCase()}</strong> </Nombres>
       </div>
     </div>
   );
