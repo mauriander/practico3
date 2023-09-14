@@ -12,6 +12,19 @@ Este proyecto corresponde a un práctico de FAMAF en colaboración con Argentina
 - El juego incluye dos botones: uno para INICIAR y otro para REINICIAR la partida.
 - El boton de VER u OCULTAR REGLAS permitira visualizar las reglas de juego.
 
+### Componentes del practico
+
+- APP
+- TurnoJugador
+- Marcadores
+- Reglas
+
+### Nuevos conocimientos
+
+- Estados (state)
+- Styled Components
+- Modal
+
 ## Uso del Juego
 
 Para utilizar el juego, hay dos opciones:
