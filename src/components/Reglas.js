@@ -21,11 +21,8 @@ const TituloReglas = styled.h2`
       color:white;      
        margin: 16px 16px;
 `
-
+//Soalmente es retrona un html no es necesario pero se realizo para mejorar el usos de componentes
 const Reglas = ()=>{
-
- 
-  
 
 return (
     <DivReglas>
